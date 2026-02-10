@@ -111,15 +111,18 @@ export default function Home() {
               We offer comprehensive plumbing services for residential and commercial properties.
             </p>
           </div>
+          
+          const services = [
+            { icon: Droplets, title: 'Drain Cleaning', desc: 'Professional drain cleaning to keep your pipes flowing smoothly.' },
+            { icon: Flame, title: 'Water Heaters', desc: 'Installation, repair, and maintenance of all water heater types.' },
+            { icon: Hammer, title: 'Pipe Repair', desc: 'Expert pipe repair and replacement services.' },
+            { icon: Toilet, title: 'Toilet Services', desc: 'Toilet installation, repair, and clog removal.' },
+            { icon: Bath, title: 'Leak Detection', desc: 'Advanced leak detection to prevent water damage.' },
+            { icon: Briefcase, title: 'Commercial Plumbing', desc: 'Full-service plumbing for businesses and properties.' },
+          ]
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { icon: Droplets, title: 'Drain Cleaning', desc: 'Professional drain cleaning to keep your pipes flowing smoothly.' },
-              { icon: Flame, title: 'Water Heaters', desc: 'Installation, repair, and maintenance of all water heater types.' },
-              { icon: Hammer, title: 'Pipe Repair', desc: 'Expert pipe repair and replacement services.' },
-              { icon: Toilet, title: 'Toilet Services', desc: 'Toilet installation, repair, and clog removal.' },
-              { icon: Bath, title: 'Leak Detection', desc: 'Advanced leak detection to prevent water damage.' },
-              { icon: Briefcase, title: 'Commercial Plumbing', desc: 'Full-service plumbing for businesses and properties.' },
-            ].map((service, index) => (
+            {services.map((service, index) => (
               <div key={index} className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 {service.image && (
                   <div className="relative h-48 w-full">
