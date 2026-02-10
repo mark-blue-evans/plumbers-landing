@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -76,35 +77,14 @@ export default function Home() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-8">
-                <div className="bg-plumber-blue rounded-xl p-6 mb-6">
-                  <div className="flex items-center justify-center w-24 h-24 bg-white/10 rounded-full mx-auto mb-4">
-                    <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-white text-center text-xl font-bold mb-2">Emergency Service</h3>
-                  <p className="text-white/80 text-center">Average arrival time: 45 minutes</p>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                    <span className="text-gray-600">Service Call</span>
-                    <span className="font-semibold text-gray-900">$0*</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                    <span className="text-gray-600">Drain Cleaning</span>
-                    <span className="font-semibold text-gray-900">From $99</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                    <span className="text-gray-600">Water Heater Repair</span>
-                    <span className="font-semibold text-gray-900">From $149</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3">
-                    <span className="text-gray-600">Pipe Repair</span>
-                    <span className="font-semibold text-gray-900">From $79</span>
-                  </div>
-                </div>
-                <p className="text-xs text-gray-500 mt-4 text-center">* waived with service over $200</p>
+              <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/hero-plumber.jpg"
+                  alt="Professional plumber"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -122,17 +102,24 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: '🚿', title: 'Drain Cleaning', desc: 'Professional drain cleaning to keep your pipes flowing smoothly.' },
-              { icon: '🔥', title: 'Water Heaters', desc: 'Installation, repair, and maintenance of all water heater types.' },
-              { icon: '🔧', title: 'Pipe Repair', desc: 'Expert pipe repair and replacement services.' },
+              { image: '/images/drain-cleaning.jpg', icon: '🚿', title: 'Drain Cleaning', desc: 'Professional drain cleaning to keep your pipes flowing smoothly.' },
+              { image: '/images/water-heater.jpg', icon: '🔥', title: 'Water Heaters', desc: 'Installation, repair, and maintenance of all water heater types.' },
+              { image: '/images/emergency.jpg', icon: '🔧', title: 'Pipe Repair', desc: 'Expert pipe repair and replacement services.' },
               { icon: '🚽', title: 'Toilet Services', desc: 'Toilet installation, repair, and clog removal.' },
               { icon: '🛁', title: 'Leak Detection', desc: 'Advanced leak detection to prevent water damage.' },
               { icon: '💼', title: 'Commercial Plumbing', desc: 'Full-service plumbing for businesses and properties.' },
             ].map((service, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.desc}</p>
+              <div key={index} className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                {service.image && (
+                  <div className="relative h-48 w-full">
+                    <Image src={service.image} alt={service.title} fill className="object-cover" />
+                  </div>
+                )}
+                <div className="p-8">
+                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                  <p className="text-gray-600">{service.desc}</p>
+                </div>
               </div>
             ))}
           </div>
