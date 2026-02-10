@@ -17,6 +17,20 @@ import {
 } from 'lucide-react'
 
 export default function Home() {
+  const services: Array<{
+    icon: React.ElementType;
+    title: string;
+    desc: string;
+    image?: string;
+  }> = [
+    { icon: Droplets, title: 'Drain Cleaning', desc: 'Professional drain cleaning to keep your pipes flowing smoothly.', image: '/images/drain-cleaning.jpg' },
+    { icon: Flame, title: 'Water Heaters', desc: 'Installation, repair, and maintenance of all water heater types.', image: '/images/water-heater.jpg' },
+    { icon: Hammer, title: 'Pipe Repair', desc: 'Expert pipe repair and replacement services.', image: '/images/emergency.jpg' },
+    { icon: Toilet, title: 'Toilet Services', desc: 'Toilet installation, repair, and clog removal.' },
+    { icon: Bath, title: 'Leak Detection', desc: 'Advanced leak detection to prevent water damage.' },
+    { icon: Briefcase, title: 'Commercial Plumbing', desc: 'Full-service plumbing for businesses and properties.' },
+  ]
+  
   return (
     <main className="min-h-screen bg-white">
       {/* Navigation */}
@@ -111,15 +125,6 @@ export default function Home() {
               We offer comprehensive plumbing services for residential and commercial properties.
             </p>
           </div>
-          
-          const services = [
-            { icon: Droplets, title: 'Drain Cleaning', desc: 'Professional drain cleaning to keep your pipes flowing smoothly.' },
-            { icon: Flame, title: 'Water Heaters', desc: 'Installation, repair, and maintenance of all water heater types.' },
-            { icon: Hammer, title: 'Pipe Repair', desc: 'Expert pipe repair and replacement services.' },
-            { icon: Toilet, title: 'Toilet Services', desc: 'Toilet installation, repair, and clog removal.' },
-            { icon: Bath, title: 'Leak Detection', desc: 'Advanced leak detection to prevent water damage.' },
-            { icon: Briefcase, title: 'Commercial Plumbing', desc: 'Full-service plumbing for businesses and properties.' },
-          ]
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -236,7 +241,6 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock size={32} color="white" />
-              </div>
               </div>
               <h3 className="text-white font-bold text-lg mb-2">Hours</h3>
               <p className="text-blue-100">Mon-Fri: 8AM-6PM<br />24/7 Emergency</p>
