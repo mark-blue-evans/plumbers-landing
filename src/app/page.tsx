@@ -258,21 +258,21 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <a href="tel:+1234567890" className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center hover:bg-white/20 transition">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone size={32} color="white" />
+                <Phone size={32} style={{ color: 'white' }} />
               </div>
               <h3 className="text-white font-bold text-lg mb-2">Call Us</h3>
               <p className="text-blue-100">(234) 567-890</p>
             </a>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin size={32} color="white" />
+                <MapPin size={32} style={{ color: 'white' }} />
               </div>
               <h3 className="text-white font-bold text-lg mb-2">Visit Us</h3>
               <p className="text-blue-100">123 Main Street<br />Your City, ST 12345</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock size={32} color="white" />
+                <Clock size={32} style={{ color: 'white' }} />
               </div>
               <h3 className="text-white font-bold text-lg mb-2">Hours</h3>
               <p className="text-blue-100">Mon-Fri: 8AM-6PM<br />24/7 Emergency</p>
