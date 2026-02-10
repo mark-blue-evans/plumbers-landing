@@ -266,7 +266,7 @@ export default function Home() {
               </div>
               <span className="text-white font-bold">QuickFix Plumbing</span>
             </div>
-            <p className="text-gray-400 text-sm">© 2024 QuickFix Plumbing. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">© 2026 QuickFix Plumbing. All rights reserved.</p>
           </div>
         </div>
       </footer>
