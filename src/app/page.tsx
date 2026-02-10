@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { 
-  Wrench, 
   Droplets, 
   Flame, 
   Hammer, 
@@ -12,25 +11,10 @@ import {
   Star,
   Phone,
   MapPin,
-  Clock,
-  ArrowRight
+  Clock
 } from 'lucide-react'
 
 export default function Home() {
-  const services: Array<{
-    icon: React.ElementType;
-    title: string;
-    desc: string;
-    image?: string;
-  }> = [
-    { icon: Droplets, title: 'Drain Cleaning', desc: 'Professional drain cleaning to keep your pipes flowing smoothly.', image: '/images/drain-cleaning.jpg' },
-    { icon: Flame, title: 'Water Heaters', desc: 'Installation, repair, and maintenance of all water heater types.', image: '/images/water-heater.jpg' },
-    { icon: Hammer, title: 'Pipe Repair', desc: 'Expert pipe repair and replacement services.', image: '/images/emergency.jpg' },
-    { icon: Toilet, title: 'Toilet Services', desc: 'Toilet installation, repair, and clog removal.' },
-    { icon: Bath, title: 'Leak Detection', desc: 'Advanced leak detection to prevent water damage.' },
-    { icon: Briefcase, title: 'Commercial Plumbing', desc: 'Full-service plumbing for businesses and properties.' },
-  ]
-  
   return (
     <main className="min-h-screen bg-white">
       {/* Navigation */}
@@ -127,20 +111,68 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                {service.image && (
-                  <div className="relative h-48 w-full">
-                    <Image src={service.image} alt={service.title} fill className="object-cover" />
-                  </div>
-                )}
-                <div className="p-8">
-                  <service.icon size={40} color="#1e40af" className="mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                  <p className="text-gray-600">{service.desc}</p>
-                </div>
+            {/* Service 1 - Drain Cleaning */}
+            <div className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-48 w-full">
+                <Image src="/images/drain-cleaning.jpg" alt="Drain Cleaning" fill className="object-cover" />
               </div>
-            ))}
+              <div className="p-8">
+                <Droplets size={40} color="#1e40af" className="mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Drain Cleaning</h3>
+                <p className="text-gray-600">Professional drain cleaning to keep your pipes flowing smoothly.</p>
+              </div>
+            </div>
+            
+            {/* Service 2 - Water Heaters */}
+            <div className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-48 w-full">
+                <Image src="/images/water-heater.jpg" alt="Water Heaters" fill className="object-cover" />
+              </div>
+              <div className="p-8">
+                <Flame size={40} color="#1e40af" className="mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Water Heaters</h3>
+                <p className="text-gray-600">Installation, repair, and maintenance of all water heater types.</p>
+              </div>
+            </div>
+            
+            {/* Service 3 - Pipe Repair */}
+            <div className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-48 w-full">
+                <Image src="/images/emergency.jpg" alt="Pipe Repair" fill className="object-cover" />
+              </div>
+              <div className="p-8">
+                <Hammer size={40} color="#1e40af" className="mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Pipe Repair</h3>
+                <p className="text-gray-600">Expert pipe repair and replacement services.</p>
+              </div>
+            </div>
+            
+            {/* Service 4 - Toilet Services */}
+            <div className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="p-8">
+                <Toilet size={40} color="#1e40af" className="mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Toilet Services</h3>
+                <p className="text-gray-600">Toilet installation, repair, and clog removal.</p>
+              </div>
+            </div>
+            
+            {/* Service 5 - Leak Detection */}
+            <div className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="p-8">
+                <Bath size={40} color="#1e40af" className="mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Leak Detection</h3>
+                <p className="text-gray-600">Advanced leak detection to prevent water damage.</p>
+              </div>
+            </div>
+            
+            {/* Service 6 - Commercial */}
+            <div className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="p-8">
+                <Briefcase size={40} color="#1e40af" className="mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Commercial Plumbing</h3>
+                <p className="text-gray-600">Full-service plumbing for businesses and properties.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
