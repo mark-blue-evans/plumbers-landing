@@ -127,7 +127,7 @@ export default function Home() {
                   </div>
                 )}
                 <div className="p-8">
-                  <service.icon size={40} className="text-plumber-blue mb-4" />
+                  <service.icon size={40} color="#1e40af" className="mb-4" />
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
                   <p className="text-gray-600">{service.desc}</p>
                 </div>
@@ -218,21 +218,21 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <a href="tel:+1234567890" className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center hover:bg-white/20 transition">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone size={32} className="text-white" />
+                <Phone size={32} color="white" />
               </div>
               <h3 className="text-white font-bold text-lg mb-2">Call Us</h3>
               <p className="text-blue-100">(234) 567-890</p>
             </a>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin size={32} className="text-white" />
+                <MapPin size={32} color="white" />
               </div>
               <h3 className="text-white font-bold text-lg mb-2">Visit Us</h3>
               <p className="text-blue-100">123 Main Street<br />Your City, ST 12345</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock size={32} className="text-white" />
+                <Clock size={32} color="white" />
               </div>
               </div>
               <h3 className="text-white font-bold text-lg mb-2">Hours</h3>
